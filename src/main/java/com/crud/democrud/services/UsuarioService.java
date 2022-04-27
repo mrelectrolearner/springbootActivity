@@ -2,6 +2,7 @@ package com.crud.democrud.services;
 
 import com.crud.democrud.models.UsuarioModel;
 import com.crud.democrud.repositories.UsuarioRepository;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,6 +38,11 @@ public class UsuarioService {
         }catch(Exception err){
             return false;
         }
+    }
+
+    public UsuarioModel actualizar(Long id, UsuarioModel usuario) {
+        usuario.setId(id);
+        return usuarioRepository.save(usuario);
     }
 
 
