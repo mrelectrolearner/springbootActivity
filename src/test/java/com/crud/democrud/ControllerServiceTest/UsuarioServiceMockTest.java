@@ -41,4 +41,5 @@ public class UsuarioServiceMockTest {
     verify(usuarioRepository).findAll();
   }
 
+
 }
