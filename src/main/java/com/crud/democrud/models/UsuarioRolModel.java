@@ -13,7 +13,7 @@ import java.util.List;
 public class UsuarioRolModel implements Serializable {
     private static final long serialVersionUID=1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name= "id_usuario_rol ", unique = true, nullable = false)
     private Long id;
 
@@ -34,6 +34,11 @@ public class UsuarioRolModel implements Serializable {
         this.usuarios.add(usuario);
     }
 
+    public UsuarioRolModel(String rol) {
+        this.rol = rol;
+    }
 
+    public UsuarioRolModel() {
 
+    }
 }
