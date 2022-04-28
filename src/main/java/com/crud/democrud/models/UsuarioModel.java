@@ -2,6 +2,7 @@ package com.crud.democrud.models;
 
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -24,9 +25,22 @@ public class UsuarioModel implements Serializable {
     private String email;
     private Integer prioridad;
 
-
+    @JsonIgnore
     @ManyToMany(mappedBy = "usuarios")
     private List<UsuarioRolModel> roles=new ArrayList<>();
 
+
+    public UsuarioModel(String nombre, String email, Integer prioridad) {
+        this.nombre = nombre;
+        this.email = email;
+        this.prioridad = prioridad;
+    }
+
+    public UsuarioModel() {
+
+    }
+    public void agregarRol(UsuarioRolModel rol){
+        this.roles.add(rol);
+    }
 
 }

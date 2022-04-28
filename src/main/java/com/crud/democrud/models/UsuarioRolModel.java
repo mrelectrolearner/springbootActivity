@@ -17,7 +17,10 @@ public class UsuarioRolModel implements Serializable {
     @Column(name= "id_usuario_rol ", unique = true, nullable = false)
     private Long id;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
     @JoinTable(name="usuario_con_usuario_rol",
             joinColumns = {@JoinColumn(name="id_usuario_rol")},
             inverseJoinColumns = {@JoinColumn(name="id")})
@@ -26,6 +29,10 @@ public class UsuarioRolModel implements Serializable {
 
 
     private String rol;
+
+    public void agregarusuario(UsuarioModel usuario){
+        this.usuarios.add(usuario);
+    }
 
 
 
