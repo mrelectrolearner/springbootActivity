@@ -24,6 +24,12 @@ puede repetirse en mucho usuarios. Por lo tanto se puede concluir que entre ello
 una relación de muchos a muchos (@ManyToMany Relation.), dado que esta es la definición de
 esa relación. 
 
+### Prueba de los endPoints 
+
+Ademas de las pruebas unitarias realizada para Usuario y UsuarioRol se probaron los endPoint 
+mediante postman. Se adjunta en la carpeta "capturas postman" imagenes que muestran algunas de
+las pruebas realizadas mediante postman.
+
 
 
 
